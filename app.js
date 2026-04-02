@@ -1,4 +1,6 @@
 (function () {
+  var refreshCheckoutModalIfOpen = function () {};
+
   var group = document.getElementById("hktvmall-group");
   var toggleChev = document.getElementById("toggle-hktvmall");
   if (toggleChev && group) {
@@ -303,6 +305,10 @@
     timeslotModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     forceMergeOnTimeslotConfirm = false;
+    var checkoutModalEl = document.getElementById("checkout-confirm-modal");
+    if (checkoutModalEl && checkoutModalEl.classList.contains("is-open")) {
+      document.body.style.overflow = "hidden";
+    }
   }
 
   function applyTimeslotSelection() {
@@ -322,6 +328,7 @@
       applyDeliveryMode(modalMode === modalMode3hr ? MODE_3HR_ONLY : MODE_MERGE);
     }
     syncAllParentsAndFooter();
+    refreshCheckoutModalIfOpen();
   }
 
   if (changeBtn) {
@@ -827,6 +834,7 @@
   var checkoutConfirmBackdrop = document.getElementById("checkout-confirm-backdrop");
   var checkoutConfirmClose = document.getElementById("checkout-confirm-close");
   var checkoutConfirmProceed = document.getElementById("checkout-confirm-proceed");
+  var checkoutEditTimeslot = document.getElementById("checkout-edit-timeslot");
   var checkoutSuccessPage = document.getElementById("checkout-success-page");
   var checkoutSuccessTotalEl = document.getElementById("checkout-success-total");
   var checkoutSuccessDone = document.getElementById("checkout-success-done");
@@ -897,6 +905,12 @@
     if (payEl) payEl.textContent = formatCheckoutMoney(grand);
   }
 
+  refreshCheckoutModalIfOpen = function () {
+    if (checkoutConfirmModal && checkoutConfirmModal.classList.contains("is-open")) {
+      populateCheckoutModal();
+    }
+  };
+
   function openCheckoutConfirmModal() {
     populateCheckoutModal();
     if (checkoutConfirmModal) {
@@ -953,6 +967,12 @@
   }
   if (checkoutConfirmClose) {
     checkoutConfirmClose.addEventListener("click", closeCheckoutConfirmModal);
+  }
+  if (checkoutEditTimeslot) {
+    checkoutEditTimeslot.addEventListener("click", function () {
+      forceMergeOnTimeslotConfirm = currentDeliveryMode === "3hr";
+      openTimeslotModal();
+    });
   }
   if (checkoutConfirmProceed) {
     checkoutConfirmProceed.addEventListener("click", function () {
