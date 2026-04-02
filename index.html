@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <div class="app-shell" data-node-id="15619:11971">
@@ -739,66 +739,6 @@
         </div>
       </footer>
 
-      <div class="timeslot-modal" id="timeslot-modal" aria-hidden="true">
-        <button type="button" class="timeslot-modal__backdrop" id="timeslot-backdrop" aria-label="關閉"></button>
-        <section class="timeslot-sheet" role="dialog" aria-modal="true" aria-labelledby="timeslot-title">
-          <div class="timeslot-sheet__handle" aria-hidden="true"></div>
-          <div class="timeslot-sheet__head">
-            <h3 id="timeslot-title">HKTVmall 送貨時段</h3>
-            <button type="button" class="timeslot-sheet__close" id="timeslot-close" aria-label="關閉">×</button>
-          </div>
-          <div class="timeslot-segment" role="tablist" aria-label="送貨方式">
-            <button type="button" class="timeslot-segment__btn is-active" id="timeslot-seg-3hr" role="tab">快! 3小時送達</button>
-            <button type="button" class="timeslot-segment__btn" id="timeslot-seg-merge" role="tab">一併送</button>
-          </div>
-          <div class="timeslot-sheet__body">
-            <div class="timeslot-wheel">
-              <div class="timeslot-wheel__col">
-      
-                <div class="timeslot-wheel__viewport">
-                  <div class="timeslot-wheel__mask"></div>
-                  <div class="timeslot-wheel__list" id="timeslot-date-row"></div>
-                </div>
-              </div>
-              <div class="timeslot-wheel__col">
-                
-                <div class="timeslot-wheel__viewport">
-                  <div class="timeslot-wheel__mask"></div>
-                  <div class="timeslot-wheel__list" id="timeslot-time-row"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="timeslot-sheet__footer">
-            <button type="button" class="timeslot-btn timeslot-btn--primary" id="timeslot-confirm">確認</button>
-          </div>
-        </section>
-      </div>
-
-      <div class="timeslot-modal qty-modal" id="qty-modal" aria-hidden="true">
-        <button type="button" class="timeslot-modal__backdrop" id="qty-backdrop" aria-label="關閉"></button>
-        <section class="timeslot-sheet" role="dialog" aria-modal="true" aria-labelledby="qty-modal-title">
-          <div class="timeslot-sheet__handle" aria-hidden="true"></div>
-          <div class="timeslot-sheet__head">
-            <h3 id="qty-modal-title">更改數量</h3>
-            <button type="button" class="timeslot-sheet__close" id="qty-close" aria-label="關閉">×</button>
-          </div>
-          <div class="timeslot-sheet__body">
-            <div class="timeslot-wheel timeslot-wheel--single">
-              <div class="timeslot-wheel__col">
-                <div class="timeslot-wheel__viewport" id="qty-wheel-viewport">
-                  <div class="timeslot-wheel__mask"></div>
-                  <div class="timeslot-wheel__list" id="qty-wheel-row"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="timeslot-sheet__footer">
-            <button type="button" class="timeslot-btn timeslot-btn--primary" id="qty-confirm">確認</button>
-          </div>
-        </section>
-      </div>
-
       <div class="checkout-confirm-modal" id="checkout-confirm-modal" aria-hidden="true">
         <button type="button" class="checkout-confirm-backdrop" id="checkout-confirm-backdrop" aria-label="關閉"></button>
         <div
@@ -946,6 +886,67 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- 送貨時段／數量彈窗置於結帳彈窗之後，避免相同層級時後繪製者蓋住時段選擇（GitHub Pages／快取舊 CSS 時較穩） -->
+      <div class="timeslot-modal" id="timeslot-modal" aria-hidden="true">
+        <button type="button" class="timeslot-modal__backdrop" id="timeslot-backdrop" aria-label="關閉"></button>
+        <section class="timeslot-sheet" role="dialog" aria-modal="true" aria-labelledby="timeslot-title">
+          <div class="timeslot-sheet__handle" aria-hidden="true"></div>
+          <div class="timeslot-sheet__head">
+            <h3 id="timeslot-title">HKTVmall 送貨時段</h3>
+            <button type="button" class="timeslot-sheet__close" id="timeslot-close" aria-label="關閉">×</button>
+          </div>
+          <div class="timeslot-segment" role="tablist" aria-label="送貨方式">
+            <button type="button" class="timeslot-segment__btn is-active" id="timeslot-seg-3hr" role="tab">快! 3小時送達</button>
+            <button type="button" class="timeslot-segment__btn" id="timeslot-seg-merge" role="tab">一併送</button>
+          </div>
+          <div class="timeslot-sheet__body">
+            <div class="timeslot-wheel">
+              <div class="timeslot-wheel__col">
+      
+                <div class="timeslot-wheel__viewport">
+                  <div class="timeslot-wheel__mask"></div>
+                  <div class="timeslot-wheel__list" id="timeslot-date-row"></div>
+                </div>
+              </div>
+              <div class="timeslot-wheel__col">
+                
+                <div class="timeslot-wheel__viewport">
+                  <div class="timeslot-wheel__mask"></div>
+                  <div class="timeslot-wheel__list" id="timeslot-time-row"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeslot-sheet__footer">
+            <button type="button" class="timeslot-btn timeslot-btn--primary" id="timeslot-confirm">確認</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="timeslot-modal qty-modal" id="qty-modal" aria-hidden="true">
+        <button type="button" class="timeslot-modal__backdrop" id="qty-backdrop" aria-label="關閉"></button>
+        <section class="timeslot-sheet" role="dialog" aria-modal="true" aria-labelledby="qty-modal-title">
+          <div class="timeslot-sheet__handle" aria-hidden="true"></div>
+          <div class="timeslot-sheet__head">
+            <h3 id="qty-modal-title">更改數量</h3>
+            <button type="button" class="timeslot-sheet__close" id="qty-close" aria-label="關閉">×</button>
+          </div>
+          <div class="timeslot-sheet__body">
+            <div class="timeslot-wheel timeslot-wheel--single">
+              <div class="timeslot-wheel__col">
+                <div class="timeslot-wheel__viewport" id="qty-wheel-viewport">
+                  <div class="timeslot-wheel__mask"></div>
+                  <div class="timeslot-wheel__list" id="qty-wheel-row"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeslot-sheet__footer">
+            <button type="button" class="timeslot-btn timeslot-btn--primary" id="qty-confirm">確認</button>
+          </div>
+        </section>
       </div>
     </div>
 
