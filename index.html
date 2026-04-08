@@ -124,53 +124,141 @@
 
       <main class="main-scroll" data-name="List">
         <section class="section-delivery-time" data-name="Delivery Time">
-          <div class="delivery-card" data-name="#">
-            <p class="delivery-card__title">HKTVmall 送貨時間：</p>
-
-            <div class="option-3hr" data-node-id="15619:11963">
-              <div class="radio-img" style="position: relative; width: 24px; height: 24px">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/fff61bf6-fd28-4eee-b59d-6652d6838905"
-                  alt=""
-                  style="position: absolute; inset: 8.33%; width: calc(100% - 16.66%); height: calc(100% - 16.66%)"
-                />
-              </div>
-              <div class="option-3hr__body">
-                <div class="option-3hr__row1">
+          <div class="delivery-card" data-name="HKTVmall delivery time">
+            <div class="delivery-card__header">
+              <p class="delivery-card__title">HKTVmall 送貨時間:</p>
+              <button type="button" class="delivery-card__all-slots" id="btn-all-timeslots" aria-label="全部時段">
+                <span>全部時段</span>
+                <svg class="delivery-card__all-slots-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="delivery-slot-scroll" role="radiogroup" aria-label="HKTVmall 送貨時間">
+              <button
+                type="button"
+                class="delivery-slot-card delivery-slot-card--3hr"
+                data-node-id="15755:20355"
+                role="radio"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
                   <span class="badge-fast">快!</span>
-                  <span class="t-bold">3小時送達</span>
-                  <span class="t-reg" id="option-3hr-timeslot-text">今日 12:30-15:00</span>
+                  <span class="delivery-slot-card__time" id="option-3hr-timeslot-text">今日12:30-3PM</span>
                 </div>
-                <div class="option-3hr__row2">
-                  <span>只購買</span>
-                  <span class="highlight">3小時送達</span>
-                  <span>商品</span>
+                <p class="delivery-slot-card__line2 delivery-slot-card__line2--3hr">
+                  <span>只限</span><span class="delivery-slot-card__purple">3小時送達</span><span class="delivery-slot-card__purple">商品</span>
+                </p>
+              </button>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="明天"
+                data-merge-time="15:00 - 18:00"
+                data-node-id="16086:9378"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">明天3-6PM</span>
                 </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
               </div>
-              <div class="cutoff-badge" data-name="Cutoff">
-                <span>截單時間： 10AM</span>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="明天"
+                data-merge-time="18:00 - 21:00"
+                data-node-id="16145:20078"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">明天6-9PM</span>
+                </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
+              </div>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="明天"
+                data-merge-time="21:00 - 23:00"
+                data-node-id="16145:20093"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">明天9-11PM</span>
+                </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
+              </div>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="8/4(三)"
+                data-merge-time="10:00 - 12:30"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">8/4(三)10AM-12:30PM</span>
+                </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
+              </div>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="8/4(三)"
+                data-merge-time="12:30 - 15:00"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">8/4(三)12:30-3PM</span>
+                </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
+              </div>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="8/4(三)"
+                data-merge-time="15:00 - 18:00"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">8/4(三)3-6PM</span>
+                </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
+              </div>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="8/4(三)"
+                data-merge-time="18:00 - 21:00"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">8/4(三)6-9PM</span>
+                </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
+              </div>
+              <div
+                class="delivery-slot-card delivery-slot-card--merge"
+                data-merge-date="8/4(三)"
+                data-merge-time="21:00 - 23:00"
+                role="radio"
+                tabindex="0"
+                aria-checked="false"
+              >
+                <div class="delivery-slot-card__row1">
+                  <span class="delivery-slot-card__time">8/4(三)9-11PM</span>
+                </div>
+                <p class="delivery-slot-card__line2">全部商品</p>
               </div>
             </div>
-
-            <div class="option-merge" data-name="Delivery Time">
-              <div class="radio-img" style="position: relative; width: 24px; height: 24px">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/5d8b5b28-ba44-41c8-9964-6d5d2bcaf3ba"
-                  alt=""
-                  style="position: absolute; inset: 8.33%; width: calc(100% - 16.66%); height: calc(100% - 16.66%)"
-                />
-                <img
-                  src="https://www.figma.com/api/mcp/asset/88274e6e-4039-46bc-91b8-ee240bbf501e"
-                  alt=""
-                  style="position: absolute; inset: 8.33%; width: calc(100% - 16.66%); height: calc(100% - 16.66%)"
-                />
-              </div>
-              <div class="option-merge__text">
-                <strong>一併送</strong>
-                <span id="merge-timeslot-text">明天 15:00-18:00</span>
-              </div>
-              <button type="button" class="btn-change" id="btn-change-time">更改</button>
-            </div>
+            <span id="merge-timeslot-text" class="visually-hidden" aria-hidden="true">明天3-6PM</span>
           </div>
         </section>
 
@@ -799,6 +887,16 @@
           </div>
 
           <div class="checkout-confirm-scroll">
+            <div
+              id="checkout-timeslot-sku-warning"
+              class="checkout-timeslot-sku-warning"
+              role="alert"
+              aria-live="polite"
+              aria-hidden="true"
+              hidden
+            >
+              部分已選商品未能在此送貨時段送達，請返回購物車確認。
+            </div>
             <div class="checkout-confirm-card checkout-confirm-card--white">
               <div class="checkout-confirm-row">
                 <span class="checkout-confirm-row__label">送貨時間</span>
@@ -922,36 +1020,30 @@
       <!-- 送貨時段／數量彈窗置於結帳彈窗之後，避免相同層級時後繪製者蓋住時段選擇（GitHub Pages／快取舊 CSS 時較穩） -->
       <div class="timeslot-modal" id="timeslot-modal" aria-hidden="true">
         <button type="button" class="timeslot-modal__backdrop" id="timeslot-backdrop" aria-label="關閉"></button>
-        <section class="timeslot-sheet" role="dialog" aria-modal="true" aria-labelledby="timeslot-title">
+        <section class="timeslot-sheet timeslot-sheet--picker" role="dialog" aria-modal="true" aria-labelledby="timeslot-title">
           <div class="timeslot-sheet__handle" aria-hidden="true"></div>
           <div class="timeslot-sheet__head">
-            <h3 id="timeslot-title">HKTVmall 送貨時段</h3>
+            <span class="timeslot-sheet__head-spacer" aria-hidden="true"></span>
+            <h3 id="timeslot-title">HKTVmall 送貨時間</h3>
             <button type="button" class="timeslot-sheet__close" id="timeslot-close" aria-label="關閉">×</button>
           </div>
-          <div class="timeslot-segment" role="tablist" aria-label="送貨方式">
-            <button type="button" class="timeslot-segment__btn is-active" id="timeslot-seg-3hr" role="tab">快! 3小時送達</button>
-            <button type="button" class="timeslot-segment__btn" id="timeslot-seg-merge" role="tab">一併送</button>
-          </div>
-          <div class="timeslot-sheet__body">
-            <div class="timeslot-wheel">
-              <div class="timeslot-wheel__col">
-      
-                <div class="timeslot-wheel__viewport">
-                  <div class="timeslot-wheel__mask"></div>
-                  <div class="timeslot-wheel__list" id="timeslot-date-row"></div>
-                </div>
-              </div>
-              <div class="timeslot-wheel__col">
-                
-                <div class="timeslot-wheel__viewport">
-                  <div class="timeslot-wheel__mask"></div>
-                  <div class="timeslot-wheel__list" id="timeslot-time-row"></div>
+          <div class="timeslot-sheet__body timeslot-sheet__body--picker">
+            <div class="timeslot-picker">
+              <div class="timeslot-picker__frame">
+                <div class="timeslot-picker__highlight" aria-hidden="true"></div>
+                <div class="timeslot-picker__fade timeslot-picker__fade--top" aria-hidden="true"></div>
+                <div class="timeslot-picker__fade timeslot-picker__fade--bottom" aria-hidden="true"></div>
+                <div class="timeslot-picker__viewport" id="timeslot-picker-viewport" tabindex="0" role="listbox" aria-labelledby="timeslot-title">
+                  <div class="timeslot-picker__list" id="timeslot-picker-row"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="timeslot-sheet__footer">
-            <button type="button" class="timeslot-btn timeslot-btn--primary" id="timeslot-confirm">確認</button>
+          <div class="timeslot-sheet__footer timeslot-sheet__footer--picker">
+            <button type="button" class="timeslot-btn timeslot-btn--primary" id="timeslot-confirm">確定</button>
+            <div class="timeslot-sheet__home-bar" aria-hidden="true">
+              <div class="home-indicator"></div>
+            </div>
           </div>
         </section>
       </div>
@@ -1011,6 +1103,21 @@
         </p>
         <button type="button" class="checkout-success-btn" id="checkout-success-done">返回購物車</button>
       </div>
+    </div>
+
+    <div
+      id="timeslot-change-loading"
+      class="timeslot-change-loading"
+      hidden
+      aria-hidden="true"
+      aria-busy="true"
+      role="status"
+    >
+      <div class="timeslot-change-loading__backdrop"></div>
+      <div class="timeslot-change-loading__content">
+        <div class="timeslot-change-loading__spinner" aria-hidden="true"></div>
+      </div>
+      <span class="visually-hidden">更新送貨時段中…</span>
     </div>
 
     <script src="app.js"></script>
